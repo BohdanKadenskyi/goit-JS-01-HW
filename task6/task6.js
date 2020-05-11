@@ -8,25 +8,26 @@ const counter = () => {
   do {
     input = prompt("Enter number");
 
-    if (input === null) {
-      const messageConsole = `Общая сумма чисел равна ${total}`;
-      return messageConsole;
-    }
+    const value = Number(input);
 
-    input = Number(input);
-    const notNumber = Number.isNaN(input);
-    if (notNumber) {
-      console.log(alert("Было введено не число, попробуйте еще раз"));
+    if (Number.isNaN(value)) {
+      alert("Было введено не число, попробуйте еще раз");
       continue;
     }
 
-    if ((total += input)) {
-      for (const number of numbers) {
-        console.log(number);
-        total += number;
-      }
+    numbers.push(value);
+
+    if (input === null) {
+      console.log("Cancel");
+      break;
     }
   } while (true);
+
+  for (const number of numbers) {
+    total += number;
+  }
+  const message = `Общая сумма чисел равна ${total}`;
+  return message;
 };
 
 console.log(counter());

@@ -1,18 +1,14 @@
 console.log("TASK-4");
 
 const formatString = function (string) {
-  for (let i = 0; i < string.length; i += 1) {
-    const stringLength40 = string.slice(0, 39);
-    const points = "...";
-    const addPointsWithString = stringLength40.concat(points);
+  const stringLength40 = string.slice(0, 39);
+  const points = "...";
+  const addPointsWithString = stringLength40.concat(points);
 
-    if (string.length <= 40) {
-      return string;
-    }
-
-    if (string.length >= 41) {
-      return addPointsWithString;
-    }
+  if (string.length >= 40) {
+    return addPointsWithString;
+  } else {
+    return string;
   }
 };
 

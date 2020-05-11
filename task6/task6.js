@@ -23,9 +23,10 @@ const counter = () => {
     }
   } while (true);
 
-  for (const number of numbers) {
-    total += number;
-  }
+  if (numbers !== 0)
+    for (const number of numbers) {
+      total += number;
+    }
   const message = `Общая сумма чисел равна ${total}`;
   return message;
 };

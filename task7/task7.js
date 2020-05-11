@@ -41,11 +41,11 @@ const addLogin = function (allLogins, login) {
   if (isLoginUnique(logins, login) === false) {
     let messageError = "Такой логин уже используется!";
     return messageError;
-  } else {
-    allLogins.push(login);
-    let messageAdd = "Логин успешно добавлен!";
-    return messageAdd;
   }
+
+  allLogins.push(login);
+  let messageAdd = "Логин успешно добавлен!";
+  return messageAdd;
 };
 
 console.log(addLogin(logins, "Ajax")); // 'Логин успешно добавлен!'
